@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='favicon-2.ico') }}?v=1" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>DevBio.com</title>
+</head>
+<body>
+    <!-- Animated background -->
+    <div class="bg-particles" id="particles"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">devbio.com</div>
+        <div class="nav-links">
+            <a href="https://github.com/abhirajadhikary06/devbiodotcom/blob/main/README.md">Readme.md</a>
+            <a href="https://www.linkedin.com/in/abhirajadhikary06/">Connect-Me</a>
+            <a href="https://github.com/abhirajadhikary06">Builders</a>
+        </div>
+        <div class="actions">
+            <a href="https://github.com/abhirajadhikary06/devbiodotcom" class="btn btn-outline">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" style="vertical-align: -0.125em; margin-right: 0.25rem;">
+                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                </svg>
+                GitHub
+            </a>
+            <a href="https://open-launch.com/projects/net-pulse" class="btn btn-outline">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 32 32" fill="none" style="vertical-align: -0.125em; margin-right: 0.25rem;">
+                    <circle cx="16" cy="18" r="12" stroke="currentColor" stroke-width="6" fill="none"/>
+                    <circle cx="16" cy="16" r="7" fill="none"/>
+                </svg>
+                Open Launch
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main content -->
+    <main class="main-content">
+        <!-- Centered version badge -->
+        <div class="version-badge">
+            <div class="greeting-dot"></div>
+            <span class="greeting-text" id="greeting">devbio.com</span>
+        </div>
+
+        <h1 class="main-title">Developer Bio Generator</h1>
+        <p class="main-subtitle">
+            Empowering developers with AI-powered bio generation that creates professional 
+            and engaging profiles for your developer platforms.
+        </p>
+
+        <!-- Enhanced Bio Generator Form -->
+        <div class="bio-generator">
+            <form id="bioForm">
+                <div class="form-group">
+                    <label class="form-label" for="description">Your Description or Keywords</label>
+                    <textarea 
+                        id="description" 
+                        name="description" 
+                        rows="4" 
+                        class="form-input" 
+                        placeholder="e.g., Python developer, AI enthusiast, full-stack engineer, creative coder, blockchain developer"
+                    ></textarea>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="length">Bio Length</label>
+                        <select id="length" name="length" class="form-select">
+                            <option value="Short">Short & Punchy</option>
+                            <option value="Medium" selected>Medium Length</option>
+                            <option value="Larger">Detailed & Comprehensive</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="format">Bio Format</label>
+                        <select id="format" name="format" class="form-select">
+                            <option value="Plain Text">Plain Text</option>
+                            <option value="Markdown">Markdown Format</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+
+            <div class="platform-section">
+    <h3 class="platform-title">Choose Your Platform</h3>
+    <div class="platform-grid">
+        <!-- GitHub -->
+        <button class="platform-btn" data-platform="GitHub">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+            GitHub
+        </button>
+
+        <!-- LinkedIn -->
+        <button class="platform-btn" data-platform="LinkedIn">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn">
+            LinkedIn
+        </button>
+
+        <!-- Dev.to -->
+        <button class="platform-btn" data-platform="Dev.to">
+            <img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg" alt="Dev.to">
+            Dev.to
+        </button>
+
+        <!-- Stack Overflow -->
+        <button class="platform-btn" data-platform="Stack Overflow">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/stackoverflow/stackoverflow-original.svg" alt="Stack Overflow">
+            Stack Overflow
+        </button>
+
+        <!-- Hashnode -->
+        <button class="platform-btn" data-platform="Hashnode">
+            <img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1611902473383/CDyAuTy75.png" alt="Hashnode">
+            Hashnode
+        </button>
+
+        <!-- Kaggle -->
+        <button class="platform-btn" data-platform="Kaggle">
+            <img src="https://www.vectorlogo.zone/logos/kaggle/kaggle-icon.svg" alt="Kaggle">
+            Kaggle
+        </button>
+
+        <!-- Devpost -->
+        <button class="platform-btn" data-platform="Devpost">
+            <img src="https://images.seeklogo.com/logo-png/32/2/devpost-logo-png_seeklogo-320001.png" alt="Devpost">
+            Devpost
+        </button>
+
+        <!-- HackerEarth -->
+        <button class="platform-btn" data-platform="HackerEarth">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/HackerEarth_logo.png" alt="HackerEarth">
+            HackerEarth
+        </button>
+
+        <!-- Major League Hacking (MLH) -->
+        <button class="platform-btn" data-platform="Major League Hacking (MLH)">
+            <img src="https://static.mlh.io/brand-assets/logo/official/mlh-logo-color.svg" alt="MLH">
+            MLH
+        </button>
+
+        <!-- Devfolio -->
+        <button class="platform-btn" data-platform="Devfolio">
+            <img src="https://avatars.githubusercontent.com/u/38809367?v=4" alt="Devfolio">
+            Devfolio
+        </button>
+
+        <!-- DoraHacks -->
+        <button class="platform-btn" data-platform="DoraHacks">
+            <img src="https://pbs.twimg.com/profile_images/1491931762464899073/vQ_AAwon_400x400.jpg" alt="DoraHacks">
+            DoraHacks
+        </button>
+
+        <!-- Unstop -->
+        <button class="platform-btn" data-platform="Unstop">
+            <img src="https://d8it4huxumps7.cloudfront.net/uploads/images/unstop/branding-guidelines/icon/unstop-icon-800x800.png" alt="Unstop">
+            Unstop
+        </button>
+    </div>
+</div>
+            </div>
+
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <span class="loading-text">Crafting your perfect bio...</span>
+            </div>
+
+            <div class="bio-output" id="bioOutput">
+                <h3 class="platform-title">Your Generated Bio</h3>
+                <div class="bio-text" id="bioText"></div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Create animated background particles
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const particleCount = 50;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 6 + 's';
+                particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                container.appendChild(particle);
+            }
+        }
+
+document.querySelectorAll('.platform-btn').forEach(button => {
+    button.addEventListener('click', async () => {
+        const platform = button.getAttribute('data-platform');
+        const form = document.getElementById('bioForm');
+        const formData = new FormData(form);
+        formData.append('platform', platform);
+
+        const description = document.getElementById('description').value.trim();
+        if (!description) {
+            alert('Please enter a description or keywords for your bio.');
+            return;
+        }
+
+        const loading = document.getElementById('loading');
+        const bioOutput = document.getElementById('bioOutput');
+        const bioText = document.getElementById('bioText');
+
+        // Show loading spinner and hide output
+        loading.classList.add('show');
+        bioOutput.classList.remove('show');
+
+        try {
+            const response = await fetch('/generate_bio', {
+                method: 'POST',
+                body: formData
+            });
+
+            if (!response.ok) {
+                throw new Error('Server error');
+            }
+
+            const data = await response.json();
+
+            // Hide loading and show result
+            loading.classList.remove('show');
+            bioText.textContent = data.bio;
+            bioOutput.classList.add('show');
+
+        } catch (error) {
+            loading.classList.remove('show');
+            console.error('Error generating bio:', error);
+            alert('Failed to generate bio. Please try again.');
+        }
+    });
+});
+
+        // Initialize particles
+        createParticles();
+
+        // Enhanced mouse interaction
+        document.addEventListener('mousemove', (e) => {
+            const particles = document.querySelectorAll('.particle');
+            const mouseX = e.clientX / window.innerWidth;
+            const mouseY = e.clientY / window.innerHeight;
+
+            particles.forEach((particle, index) => {
+                if (index % 8 === 0) {
+                    const offsetX = (mouseX - 0.5) * 30;
+                    const offsetY = (mouseY - 0.5) * 30;
+                    particle.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+                }
+            });
+        });
+
+        // Multi-language greeting rotation
+        const greetings = [
+            "devbio.com",          // English
+            "देवबायो.कॉम",           // Hindi
+            "দেভবায়ো.কম",             // Bengali
+            "德夫比奥.com",             // Chinese (phonetically close)
+            "デヴビオ・ドットコム",        // Japanese (Katakana)
+            "ديفبيو.كوم",             // Arabic
+            "девбио.ком",            // Russian (Cyrillic)
+            "데브바이오.컴",             // Korean (Hangul)
+        ];
+
+        let currentIndex = 0;
+        const greetingElement = document.getElementById('greeting');
+
+        function rotateGreeting() {
+            greetingElement.style.opacity = '0';
+            setTimeout(() => {
+                currentIndex = (currentIndex + 1) % greetings.length;
+                greetingElement.textContent = greetings[currentIndex];
+                greetingElement.style.opacity = '1';
+            }, 300);
+        }
+
+        // Change greeting every 1 seconds
+        setInterval(rotateGreeting, 1000);
+    </script>
+</body>
+</html>
